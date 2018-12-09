@@ -15,5 +15,9 @@ explore: job_order {
     sql_on: ${company.company_id} = ${job_order.company_id} ;;
     relationship: one_to_many
     }
-
+join: job_order_statistics {
+  type: left_outer
+  sql_on: ${job_order.account_id} = ${job_order_statistics.account_id}   ;;
+  relationship:  many_to_many
+}
   }

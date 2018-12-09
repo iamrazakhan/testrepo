@@ -11,6 +11,11 @@ view: company {
     type: number
     sql: ${TABLE}.AccountId ;;
   }
+  dimension: accountid_companyid {
+    type: number
+    sql:  CONCAT(${account_id},${company_id}) ;;
+  }
+
 
   dimension: company_id {
     type: number
